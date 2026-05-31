@@ -4,13 +4,7 @@ resource "digitalocean_droplet" "my_app" {
   size     = var.droplet_size
   image    = var.image
   ssh_keys = [var.ssh_key_id]
-  backups  = true
-
-  backup_policy {
-    plan    = "weekly"
-    weekday = "TUE"
-    hour    = 8
-  }
+  backups  = false
 
   tags = [
     "app:${var.app_name}",
@@ -26,7 +20,7 @@ resource "digitalocean_droplet" "my_app" {
 }
 
 data "digitalocean_project" "my_app" {
-  name = var.project_name
+  name = "my_app"
 }
 
 resource "digitalocean_project_resources" "my_app" {
