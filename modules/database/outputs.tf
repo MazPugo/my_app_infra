@@ -1,9 +1,9 @@
 output "db_droplet_ip" {
   description = "Public IP of the database droplet"
-  value       = module.my_app_db.db_droplet_ip
+  value       = digitalocean_droplet.db.ipv4_address
 }
 
 output "db_droplet_name" {
   description = "Name of the database droplet"
-  value       = module.my_app_db.db_droplet_name
+  value       = digitalocean_droplet.db.name
 }
