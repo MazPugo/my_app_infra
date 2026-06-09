@@ -1,5 +1,5 @@
 resource "digitalocean_droplet" "db" {
-  name = var.app_name
+  name     = var.app_name
   region   = var.region
   size     = var.droplet_size
   image    = var.image
